@@ -191,7 +191,7 @@ export default function Home() {
                             <div className="trust-indicators">
                                 <div className="trust-item">
                                     <i className="fas fa-check-circle"></i>
-                                    <span>Licensed & Insured</span>
+                                    <span>Licensed &amp; Insured</span>
                                 </div>
                                 <div className="trust-item">
                                     <i className="fas fa-check-circle"></i>
@@ -299,10 +299,10 @@ export default function Home() {
                             <div className="service-icon">
                                 <i className="fas fa-home"></i>
                             </div>
-                            <h3>Office & Domestic Cleaning</h3>
+                            <h3>Office &amp; Domestic Cleaning</h3>
                             <p>Flexible, personalised cleaning services for your home or office space.</p>
                             <ul className="service-features">
-                                <li><i className="fas fa-check-circle"></i> Regular & one-time cleans</li>
+                                <li><i className="fas fa-check-circle"></i> Regular &amp; one-time cleans</li>
                                 <li><i className="fas fa-check-circle"></i> Move-in/move-out service</li>
                                 <li><i className="fas fa-check-circle"></i> Customisable schedules</li>
                                 <li><i className="fas fa-check-circle"></i> Certified, trusted staff</li>
@@ -313,14 +313,14 @@ export default function Home() {
                             <div className="service-icon">
                                 <i className="fas fa-shopping-cart"></i>
                             </div>
-                            <h3>Shopping Centre & Retail Cleaning</h3>
+                            <h3>Shopping Centre &amp; Retail Cleaning</h3>
                             <p>Safe, efficient cleaning for malls, stores, and retail chains with a focus on health and
                                 presentation.</p>
                             <ul className="service-features">
-                                <li><i className="fas fa-check-circle"></i> Shopping centres & outlets</li>
+                                <li><i className="fas fa-check-circle"></i> Shopping centres &amp; outlets</li>
                                 <li><i className="fas fa-check-circle"></i> Uniformed, trained staff</li>
-                                <li><i className="fas fa-check-circle"></i> Equipment & chemicals included</li>
-                                <li><i className="fas fa-check-circle"></i> Health & safety compliant</li>
+                                <li><i className="fas fa-check-circle"></i> Equipment &amp; chemicals included</li>
+                                <li><i className="fas fa-check-circle"></i> Health &amp; safety compliant</li>
                             </ul>
                         </div>
                     </div>
@@ -350,7 +350,7 @@ export default function Home() {
                             <i className="fas fa-star"></i>
                             <i className="fas fa-star"></i>
                         </div>
-                        <p>{'"We\'ve been using their commercial cleaning services for our office for over a year. Always reliable and thorough."'}</p>
+                        <p>{'"We have been using their commercial cleaning services for our office for over a year. Always reliable and thorough."'}</p>
                         <div className="testimonial-author">Mike Chen</div>
                     </div>
                     <div className="testimonial-card">
