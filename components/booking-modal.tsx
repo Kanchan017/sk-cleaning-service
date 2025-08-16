@@ -37,7 +37,9 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
         }
     }, [isOpen])
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    ) => {
         const { name, value } = e.target
         setFormData((prev) => ({ ...prev, [name]: value }))
         setErrorMessage("")
@@ -59,8 +61,9 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             })
 
             if (response.ok) {
-                setSuccessMessage("Booking request submitted! We will contact you shortly to confirm.")
-
+                setSuccessMessage(
+                    "Booking request submitted! We will contact you shortly to confirm."
+                )
             } else {
                 setErrorMessage("Failed to submit booking. Please try again later.")
             }
@@ -68,6 +71,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             console.error("Error submitting booking form:", error)
             setErrorMessage("An error occurred. Please try again.")
         }
+
         // clear form data after submission
         setFormData({
             firstName: "",
@@ -78,16 +82,20 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             date: "",
             message: "",
         })
-        // close 
+
+        // close modal after 2 seconds
         setTimeout(() => {
             onClose()
-        }, 2000) // close modal after 2 seconds
+        }, 2000)
     }
 
     if (!isOpen) return null
 
     return (
-        <div className={`modal ${isOpen ? "active" : ""}`} onClick={(e) => e.target === e.currentTarget && onClose()}>
+        <div
+            className={`modal ${isOpen ? "active" : ""}`}
+            onClick={(e) => e.target === e.currentTarget && onClose()}
+        >
             <div className="modal-content">
                 <div className="modal-header">
                     <h3>Book Your Cleaning Service</h3>
@@ -96,57 +104,112 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     </button>
                 </div>
                 <div className="modal-body">
-                    <p>Fill out the form below and we'll contact you to confirm your booking.</p>
+                    <p>
+                        Fill out the form below and we&apos;ll contact you to confirm your booking.
+                    </p>
                     <form className="modal-form" onSubmit={handleSubmit}>
                         {/* Form fields */}
                         <div className="form-row">
                             <div className="form-group">
                                 <label htmlFor="bookingFirstName">First Name</label>
-                                <input type="text" id="bookingFirstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
+                                <input
+                                    type="text"
+                                    id="bookingFirstName"
+                                    name="firstName"
+                                    value={formData.firstName}
+                                    onChange={handleChange}
+                                    required
+                                />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="bookingLastName">Last Name</label>
-                                <input type="text" id="bookingLastName" name="lastName" value={formData.lastName} onChange={handleChange} required />
+                                <input
+                                    type="text"
+                                    id="bookingLastName"
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleChange}
+                                    required
+                                />
                             </div>
                         </div>
                         <div className="form-group">
                             <label htmlFor="bookingEmail">Email</label>
-                            <input type="email" id="bookingEmail" name="email" value={formData.email} onChange={handleChange} required />
+                            <input
+                                type="email"
+                                id="bookingEmail"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="bookingPhone">Phone</label>
-                            <input type="tel" id="bookingPhone" name="phone" value={formData.phone} onChange={handleChange} required />
+                            <input
+                                type="tel"
+                                id="bookingPhone"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                required
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="bookingService">Service Type</label>
-                            <select id="bookingService" name="service" value={formData.service} onChange={handleChange} required>
+                            <select
+                                id="bookingService"
+                                name="service"
+                                value={formData.service}
+                                onChange={handleChange}
+                                required
+                            >
                                 <option value="">Select a service</option>
                                 <option value="residential">Residential Cleaning</option>
                                 <option value="commercial">Commercial Cleaning</option>
-                                <option value="shopping">Shopping Centre & Retail Store</option>
+                                <option value="shopping">
+                                    Shopping Centre &amp; Retail Store
+                                </option>
                             </select>
                         </div>
                         <div className="form-group">
                             <label htmlFor="bookingDate">Preferred Date</label>
-                            <input type="date" id="bookingDate" name="date" value={formData.date} onChange={handleChange} />
+                            <input
+                                type="date"
+                                id="bookingDate"
+                                name="date"
+                                value={formData.date}
+                                onChange={handleChange}
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="bookingMessage">Additional Details</label>
-                            <textarea id="bookingMessage" name="message" placeholder="Tell us about your cleaning needs..." value={formData.message} onChange={handleChange}></textarea>
+                            <textarea
+                                id="bookingMessage"
+                                name="message"
+                                placeholder="Tell us about your cleaning needs..."
+                                value={formData.message}
+                                onChange={handleChange}
+                            ></textarea>
                         </div>
                         <button type="submit" className="btn btn-primary btn-full">
                             Submit Booking Request
                         </button>
 
                         {/* Inline error and success messages */}
-                        {errorMessage && <p role="alert" className="form-message error">{errorMessage}</p>}
-                        {successMessage && <p role="alert" className="form-message success">{successMessage}</p>}
-
-
-
+                        {errorMessage && (
+                            <p role="alert" className="form-message error">
+                                {errorMessage}
+                            </p>
+                        )}
+                        {successMessage && (
+                            <p role="alert" className="form-message success">
+                                {successMessage}
+                            </p>
+                        )}
                     </form>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }

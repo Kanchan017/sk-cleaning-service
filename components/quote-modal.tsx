@@ -103,7 +103,9 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                     </button>
                 </div>
                 <div className="modal-body">
-                    <p>Tell us about your cleaning needs and we'll provide a detailed quote.</p>
+                    <p>
+                        Tell us about your cleaning needs and we&apos;ll provide a detailed quote.
+                    </p>
                     <form className="modal-form" onSubmit={handleSubmit}>
                         {/* Full Name */}
                         <div className="form-group">
@@ -171,7 +173,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                 <option value="residential">Residential Cleaning</option>
                                 <option value="commercial">Commercial Cleaning</option>
                                 <option value="shopping">
-                                    Shopping Centre & Retail Cleaning
+                                    Shopping Centre &amp; Retail Cleaning
                                 </option>
                             </select>
                         </div>
